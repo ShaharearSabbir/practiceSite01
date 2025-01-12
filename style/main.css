@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* font-family: "Oleo Script Swash Caps", serif; */
+/* font-family: "Open Sans", serif; */
+/* font-family: "Roboto", serif; */
+
+:root {
+    --dark-chotolate : #603936;
+    --dark-red : #E63946;
+    --light-color : #FFF9C6;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", serif;
+}
+
+.main-container {
+    width: 1366px;
+    margin: 0 auto;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 42px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 16px;
+}
+nav ul li a {
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li a.active {
+    color: var(--dark-red);
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 8px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    transform: all 400ms;
+}
+
+.light {
+    border: 1px solid black;
+}
+
+.light:hover {
+    background-color: var(--dark-red);
+    color: var(--light-color);
+}
+
+/* Helo section Starts */
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 131px);
+}
+
+.hero-container .hero-text h1{
+    font-family: "Oleo Script Swash Caps", serif;
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 100%;
+}
+
+.hero-container .hero-text .subtitle {
+    font-size: 16px;
+    lighting-color: 200px;
+    width: 490px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+}
+
+.dark {
+    background-color: var(--dark-chotolate);
+    color: var(--light-color);
+    padding: 16px 32px;
+    display: inline-block;
+    border: 1px solid var(--light-color);
+}
+
+.dark:hover {
+    background-color: var(--light-color);
+    color: var(--dark-chotolate);
+    border: 1px solid var(--dark-chotolate);
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+}
+
+.hero-text {
+    flex: 1.3;
+}
+
+.hero-container .hero-image .hero-ground {
+    background-color: var(--light-color);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 360px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 6px 15px 4px rgb(0, 0, 0, 0.25);
+    z-index: -100;
+}
+/* Helo section Ends */
+
+/* Social icons */
+
+.social-icons {
+    position: absolute;
+    bottom: 5vh;
+    right: 5vh;
+}
+
+.social-icons a {
+    margin: 0 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 400ms;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* background images */
+
+.hero-bg-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -200;
+}
+
+.hero-bg-right img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 65vh;
+}
+
+
+
+.hero-bg-left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -200;
+}
+
+.hero-bg-left img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+/* animation */
+
+.hero-bg-left img{
+    animation: move-images 1000ms forwards ease-in-out;
+    transform: translateX(-100%);
+}
+
+@keyframes move-images {
+    to {
+        transform:  translateX(0);
+    }
+}
+
+.hero-text h1, .hero-text p.subtitle ,.hero-text button{
+    animation: content-text 2000ms forwards ease-in-out;
+    transform: translateY(-80px);
+    opacity: 0;
+}
+
+.hero-text p.subtitle {
+    animation-delay: 200ms;
+}
+
+.hero-text button {
+    animation-delay: 400ms;
+}
+@keyframes content-text {
+    50% {
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
